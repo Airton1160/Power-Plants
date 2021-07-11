@@ -20,7 +20,7 @@
                 <Items>
                     <asp:MenuItem Text="Plantas" Value="Plantas">
                         <asp:MenuItem NavigateUrl="~/Plantas/Catalogo.aspx" Text="Catalogo" Value="Catalogo"></asp:MenuItem>
-                        <asp:MenuItem Text="Cadastro de Plantas" Value="CadastroPlantas"></asp:MenuItem>
+                        <asp:MenuItem Text="Cadastro de Plantas" Value="CadastroPlantas" NavigateUrl="~/Plantas/CadastroEdicaoPlanta.aspx"></asp:MenuItem>
                     </asp:MenuItem>
                 </Items>
                 <StaticHoverStyle BackColor="#666666" ForeColor="White" />

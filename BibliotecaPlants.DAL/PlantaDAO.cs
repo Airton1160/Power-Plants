@@ -35,7 +35,7 @@ namespace BibliotecaPlants.DAL
 
                     plantas.Add(planta);
                 }
-                command.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+                Coneccao.Desconectar();
                 // retorna os jogos que foram adicionados
                 return plantas;
             }
@@ -45,7 +45,46 @@ namespace BibliotecaPlants.DAL
 
                 throw;
             }
-            
+
+        }
+
+        // o int he para retornar quantas linhas foram afetadas, "uma caracteristica de qdo insere um registro!
+        // ele vai retornar a quantidades de linhas inseridas para ser tratadas na camada de negocios no plantasBo"
+        public int InserirPlanta(Planta planta)
+        {
+            try
+            {
+                var command = new SqlCommand();
+                command.Connection = Coneccao.conect;
+                command.CommandText =
+                                      @" INSERT INTO [dbo].[Plantas]
+                                          ([origemID] , [tipoID] ,[titulo] , [preco] , [data] , [imagem])
+                                      VALUES
+                                          (@ID_ORIGEM
+                                          ,@ID_TIPO
+                                          ,@TITULO
+                                          ,@PRECO
+                                          ,@DATA
+                                          ,@IMAGEM)";
+
+                command.Parameters.AddWithValue("@TITULO", planta.Titulo);
+                command.Parameters.AddWithValue("@ID_ORIGEM", planta.OrigemID);
+                command.Parameters.AddWithValue("@ID_TIPO", planta.TipoID);
+                command.Parameters.AddWithValue("@PRECO", planta.Preco);
+                command.Parameters.AddWithValue("@DATA", planta.DataEntrada);
+                command.Parameters.AddWithValue("@IMAGEM", planta.Imagem);
+
+                Coneccao.Conectar();
+                return command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                Coneccao.Desconectar();
+            }
         }
     }
 }

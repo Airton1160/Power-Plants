@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BibliotecaPlants.Site.Plantas;
 using BibliotecaPlants.BLL.Autenticacao;
+using BibliotecaPlants.BLL;
 
 namespace BibliotecaPlants.Site.Plantas
 {

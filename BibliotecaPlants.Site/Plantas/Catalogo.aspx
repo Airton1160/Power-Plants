@@ -5,10 +5,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="../Content/plants/catalogo.css" rel="stylesheet" />
     <h2>Catalogo de Plantas</h2>
+
+    <a href="CadastroEdicaoPlanta.aspx">Cadastrar Nova Planta</a>
     <hr />
     <asp:Repeater ID="RepeaterPlantas" runat="server">
         <ItemTemplate>
-            <div class="planta" onclick="redirecionarPaginaPlanta('<%= Session["Perfil"].ToString() %>', <%# DataBinder.Eval(Container.DataItem, "ID") %>)">
+            <div class="planta" onclick="redirecionarPaginaPlanta(<%--<'<%= Session["Perfil"].ToString() %>', <%# DataBinder.Eval(Container.DataItem, "ID") %>--%>)">
                 <div class="capa-plant">
                     <!-- aqui para ser dinamico as fotos assim-->
                     <img src="../Content/imagensPlants/<%# DataBinder.Eval(Container.DataItem, "imagem" ) %>" alt="<%# DataBinder.Eval(Container.DataItem, "Titulo" ) %>" />
@@ -22,11 +24,11 @@
 
     <script>
         function redirecionarPaginaPlanta(Perfil, Id) {
-            if (perfil === "A") {
-                top.location.href = "CadastroEdicaoPlants.aspx?id=" + id;
-            } else {
-                top.location.href = "DetalhesPlants.aspx?id=" + id;
-            }
+            
+               // top.location.href = "DetalhesPlants.aspx;
+             
+                
+            
         }
     </script>
 

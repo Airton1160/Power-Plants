@@ -84,10 +84,12 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\imagensPlants\cact1.jpg" />
     <Content Include="Content\imagensPlants\gira1.jpg" />
     <Content Include="Content\imagensPlants\rose.jpg" />
     <Content Include="Content\plants\catalogo.css" />
     <Content Include="Global.asax" />
+    <Content Include="Plantas\CadastroEdicaoPlanta.aspx" />
     <Content Include="Plantas\Catalogo.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -107,6 +109,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Plantas\CadastroEdicaoPlanta.aspx.cs">
+      <DependentUpon>CadastroEdicaoPlanta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Plantas\CadastroEdicaoPlanta.aspx.designer.cs">
+      <DependentUpon>CadastroEdicaoPlanta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Plantas\Catalogo.aspx.cs">
       <DependentUpon>Catalogo.aspx</DependentUpon>

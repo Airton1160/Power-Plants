@@ -14,5 +14,7 @@ namespace BibliotecaPlants.Entities
         public double? Preco { get; set; }
         public DateTime? DataEntrada { get; set; }
         public string Imagem { get; set; }
+        public Tipo Tipo { get; set; }
+        public Origem Origem { get; set; }
     }
 }
